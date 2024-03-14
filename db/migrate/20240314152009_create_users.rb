@@ -7,6 +7,7 @@ class CreateUsers < ActiveRecord::Migration[7.1]
       t.string :phone_no
       t.string :email
       t.string :password_digest
+      t.boolean :has_rented, default: false
 
       t.timestamps
     end

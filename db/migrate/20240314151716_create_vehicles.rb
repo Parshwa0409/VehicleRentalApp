@@ -5,6 +5,7 @@ class CreateVehicles < ActiveRecord::Migration[7.1]
       t.string :model
       t.integer :year
       t.integer :price_per_day
+      t.boolean :is_rented, default: false
 
       t.timestamps
     end
