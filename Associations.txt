@@ -6,4 +6,4 @@ Every RentalAgreement has one Payment
 
 Every Vehicle (CURRENTLY RENTED) will have one User
 
-Vehicle can have many Owners through RentalAgreements (BUT NOT ALL AT SAME TIME)
+Vehicle can have many Users through RentalAgreements (BUT NOT ALL AT SAME TIME)
