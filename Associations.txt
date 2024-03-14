@@ -1,0 +1,9 @@
+User rents a car through RentalAgreement
+
+User has many RentalAgreements (BUT NOT ALL AT SAME TIME)
+
+Every RentalAgreement has one Payment
+
+Every Vehicle (CURRENTLY RENTED) will have one User
+
+Vehicle can have many Owners through RentalAgreements (BUT NOT ALL AT SAME TIME)
