@@ -5,6 +5,11 @@ class CreateRentalAgreements < ActiveRecord::Migration[7.1]
       t.date :end_date
       t.integer :total_cost
 
+      t.belongs_to :user, foreign_key: true
+      t.belongs_to :vehicle, foreign_key: true
+      t.belongs_to :payment, foreign_key: true
+
+
       t.timestamps
     end
   end

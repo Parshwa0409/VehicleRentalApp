@@ -1,0 +1,14 @@
+<% if @all_vehicles.empty? %>
+    <h1>I'm sorry to inform you that all our vehicles are currently rented out. We appreciate your interest and encourage you to return later for availability. Thank you for your understanding.</h1>
+<% else %>
+    <% @all_vehicles.each do |vehicle| %>
+    <div class="vehicle-item">
+        <div>
+            <h1><%= vehicle.brand %></h1>
+            <h2><%= vehicle.model %> <%= vehicle.year %></h2>
+            <h2>Price Per Day : $<%= vehicle.price_per_day%></h2>
+        </div>
+        <%= button_to "Rent Vehicle", ciucrv_path , :method => :post, params: { id: vehicle.id }, class:"btn btn-lg btn-success" %>
+    </div>
+    <% end %>
+<% end %>
