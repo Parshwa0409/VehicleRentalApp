@@ -3,9 +3,102 @@
   font-family: Verdana, Geneva, sans-serif;
 }
 
-div.vehicle-item {
+:root {
+  --black-color: #31363f;
+  --white-color: #eeeeee;
+  --turquoise-color: #76abae;
+}
+
+.container {
+  padding-bottom: 1rem;
+}
+
+body {
+  height: 100vh;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+  color: var(--white-color);
+}
+
+/* RENTAL AGREEMENTS */
+.rental-agreement {
+  border: 1px solid black;
+  border-radius: 1rem;
+  box-shadow: 0.25rem 0.25rem black;
+
+  padding: 2rem;
+}
+
+.rental-agreement > div.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rental-agreement > div.content > h1 {
+  margin: 1rem 0;
+}
+
+.rental-agreement > div.content > .agreement-vehicle-img {
+  width: 75%;
+  border-radius: 1rem;
+  box-shadow: 0.25rem 0.25rem black;
+}
+
+/* ACTIVE AGREEMENTS */
+#great-job-img {
+  width: 90%;
+  aspect-ratio: 16/9;
+  border-radius: 1rem;
+  box-shadow: 0.25rem 0.25rem 0.5rem black;
+  margin: 1rem 0;
+}
+
+/* NAVBAR */
+
+div.navbar {
+  background-color: var(--black-color);
+  color: var(--white-color);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1rem 1rem;
+  margin-bottom: 2rem;
+}
+
+#brand-text {
+  font-weight: bold;
+}
+
+#nav-list {
+  list-style-type: none;
+  margin-top: auto;
+
+  display: flex;
+}
+
+.nav-items {
+  font-size: 1.15rem;
+  margin: auto 1rem;
+  font-weight: bold;
+}
+
+/* SHOW ALL VEHICLES */
+
+.no-vehicle-msg {
+  text-align: center;
+  padding: 2rem;
+  line-height: 1.5;
+}
+
+.vehicle-item {
   padding: 3rem 2rem;
-  margin: 1rem;
+  margin: 1rem 0;
   border: 1px solid black;
   border-radius: 1rem;
   box-shadow: 0.25rem 0.25rem black;
@@ -13,4 +106,37 @@ div.vehicle-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.style-vehicle-img {
+  width: 15rem;
+  aspect-ratio: 16/9;
+
+  border: 1px solid black;
+  border-radius: 1rem;
+  box-shadow: 0.15rem 0.15rem 0.25rem black;
+}
+
+/* RENTAL AGREEMENT FORM */
+/* 
+<%= form_for @user, html: { class: "user-form" } do |f| %>
+  <div class="date-select-wrapper">
+    <%= f.date_select :birthdate, {prompt: { day: 'Select day', month: 'Select month', year: 'Select year' }}, { class: 'date-select' } %>
+  </div>
+<% end %>
+ */
+
+.rental-agreement-form .date-select-wrapper {
+  display: flex;
+}
+
+.rental-agreement-form .date-select {
+  margin-right: 10px;
+}
+
+.rental-agreement-form .date-select select {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
 }
