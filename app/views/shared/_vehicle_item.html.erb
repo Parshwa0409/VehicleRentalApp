@@ -1,0 +1,8 @@
+<div class="vehicle-item">
+    <%= image_tag vehicle.img_url , class: 'style-vehicle-img'%>
+    <div>
+        <h1><%= vehicle.brand %> <%= vehicle.model %> <%= vehicle.year %></h1>
+        <h2>Price Per Day : $<%= vehicle.price_per_day%></h2>
+    </div>
+    <%= button_to "Rent Vehicle", ciucrv_path , :method => :post, params: { id: vehicle.id }, class:"btn btn-lg btn-success" %>
+</div>

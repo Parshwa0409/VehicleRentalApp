@@ -43,7 +43,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_14_152744) do
     t.string "email"
     t.string "password_digest"
     t.boolean "has_rented", default: false
-    t.datetime "created_at", null: false
+    t.datetime "created_at", null: falseh
     t.datetime "updated_at", null: false
   end
 

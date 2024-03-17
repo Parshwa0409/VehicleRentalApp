@@ -5,6 +5,7 @@
     <% if !session[:user_id].nil? %>
     <li><%= link_to "All Agreements", all_agreements_path, class:"nav-items"%></li>
     <li><%= link_to "Active Agreement", active_agreement_path, class:"nav-items"%></li>
+    <li><%= link_to "Search Vehicle", search_path, class:"nav-items"%></li>
     <li><%= link_to "My Profile", profile_path, class:"nav-items"%></li>
     <% end %>
   </ul>

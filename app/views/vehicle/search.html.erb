@@ -1,0 +1,27 @@
+<%= form_for :search, url: search_path, data: { turbo: false }  do |form| %>
+
+<div class="row d-flex align-items-end py-2">
+    <div class="col-5 my-3">
+        <%= form.label :brand %>
+        <%= form.text_field :brand, class:"form-control", placeholder:"Porsche"%>
+    </div>
+
+    <div class="col-5 my-3">
+        <%= form.label :model %>
+        <%= form.text_field :model, class:"form-control", placeholder:"GT3 RS"%>
+    </div>
+
+    <div class="col-2 my-3 text-center">
+        <%= form.submit "Search Vehicle", class:"btn btn-primary"%>
+    </div>
+</div>
+<% end %>
+
+
+<% if @all_vehicles.nil? ||  @all_vehicles.empty?  %>
+    <h1 class="text-center my-3"> We currently do not have the desired model, please feel free to browse & rent the vehicle you like.</h1>
+<% else %>
+    <% @all_vehicles.each do |v|%>
+        <%= render partial:"shared/vehicle_item", locals:{vehicle: v}%>
+    <% end %>
+<% end %>
