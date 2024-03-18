@@ -1,0 +1,12 @@
+<div class="navbar">
+  <h1 id="brand-text"><%= link_to "Rent-Wheels", root_path %></h1>
+
+  <ul id="nav-list">
+    <li><%= link_to "Customers", admin_u_path, class:"nav-items"%></li>
+    <li><%= link_to "Search Customer", search_u_path, class:"nav-items"%></li>
+    <li><%= link_to "My Vehicles", admin_v_path, class:"nav-items"%></li>
+    <li><%= link_to "Add New Vehicle", admin_nv_path, class:"nav-items"%></li>
+    <li><%= link_to "Insights", insights_path , class:"nav-items"%></li>
+    <li><%= button_to "Sign-Out", sign_out_path ,method: :delete, class:"btn btn-danger"%></li>
+  </ul>
+</div>

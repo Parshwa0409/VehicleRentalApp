@@ -1,6 +1,17 @@
 Rails.application.routes.draw do
-  get 'vehicle/search'
-  root 'home#index'
+  @root = ""
+
+  get "admin_v", to:'admin#all_vehicles'
+  get "admin_nv" , to:'admin#new_vehicle'
+  get "admin_u", to: 'admin#all_users'
+  get "search_u", to: 'admin#search_user'
+  post "search_u", to: 'admin#search_from_users'
+  get "search_v", to: 'vehicle#search'
+  get "insights", to: 'admin#rental_insights'
+  post "view_user", to: 'admin#view_user'
+  get "view_user", to: 'admin#show_user'
+
+  root "home#index"
 
   post 'ciucrv', to: 'user#check_if_user_can_rent'
   get 'profile', to: 'user#profile'

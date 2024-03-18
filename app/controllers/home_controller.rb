@@ -1,11 +1,6 @@
 class HomeController < ApplicationController
   def index
-
-    puts
-    p session[:user_id]
-    puts
-
-
+    @user = User.find_by(id:session[:user_id])
     @all_vehicles = Vehicle.order(:brand,:year,:model).reject {|vehicle| vehicle.is_rented==true}
   end
 end

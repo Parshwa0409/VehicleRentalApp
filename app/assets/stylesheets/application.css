@@ -140,3 +140,14 @@ div.navbar {
   border-radius: 5px;
   font-size: 14px;
 }
+
+/* admin controls */
+
+.user-div {
+  border: 1px solid black;
+  border-radius: 1.5rem;
+  box-shadow: 0.2rem 0.2rem 0.5rem black;
+
+  margin: 1rem 0;
+  padding: 1.5rem;
+}
