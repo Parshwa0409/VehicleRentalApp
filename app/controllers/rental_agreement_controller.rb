@@ -27,23 +27,37 @@ class RentalAgreementController < ApplicationController
       active:true
     )
 
-    @payment = @agreement.create_payment(
+    if @agreement.save()
+      @payment = @agreement.create_payment(
       cardholder_name:cardholder_name,
       card_number:card_number,
       cvv:cvv,
       expiry_date:expiry_date
-    )
+      )
 
-    if @agreement.errors.any? || @payment.errors.any?
-      # if payment goes_wrong then delete the rental_agreement that was created & restart!!! FIND BETTER WAY TO DO IT
-      @agreement.destroy if !(@agreement[:id].nil?)
-      render :new
+      if @payment.save()
+        user.update_column(:has_rented, true)
+        vehicle.update_column(:is_rented, true)
+        redirect_to active_agreement_path
+      else
+        flash.now[:alert] = "Payment ERROR: Plese enter valid payment details!!!"
+        @agreement.destroy if !(@agreement[:id].nil?)
+        render :new
+      end
     else
-      # update_column will help you skip the validations, when updating or else it runs through every validation.
-      user.update_column(:has_rented, true)
-      vehicle.update_column(:is_rented, true)
-      redirect_to active_agreement_path
+      
+      render :new
     end
+
+    
+
+    # if @agreement.errors.any? || @payment.errors.any?
+    #   # if payment goes_wrong then delete the rental_agreement that was created & restart!!! FIND BETTER WAY TO DO IT
+      
+    # else
+    #   # update_column will help you skip the validations, when updating or else it runs through every validation.
+      
+    # end
 
     # THIS IS HOW PARAMS ARE STRUCTURED, we need to extract data & creaet a rental agreement.
     # {"authenticity_token"=>"UZ2YfpaYcKi7U-B_uXo-5IKahxaT1iVEVOSHownepeeHsLhz5xS2c7fJCzimdXLPh4c7GD9K0HRxVOa1ecAJLQ", 
