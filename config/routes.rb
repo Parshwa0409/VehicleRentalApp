@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   get "admin_v", to:'admin#all_vehicles'
   get "admin_nv" , to:'admin#new_vehicle'
+  post "admin_nv" , to:'admin#create_new_vehicle'
   get "admin_u", to: 'admin#all_users'
   get "search_u", to: 'admin#search_user'
   post "search_u", to: 'admin#search_from_users'

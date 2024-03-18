@@ -108,13 +108,25 @@ div.navbar {
   align-items: center;
 }
 
+.vehicle-content {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
 .style-vehicle-img {
   width: 15rem;
   aspect-ratio: 16/9;
+  margin-right: 2rem;
 
   border: 1px solid black;
   border-radius: 1rem;
   box-shadow: 0.15rem 0.15rem 0.25rem black;
+}
+
+.button-content {
+  display: flex;
+  flex-direction: column;
 }
 
 /* RENTAL AGREEMENT FORM */
@@ -148,6 +160,6 @@ div.navbar {
   border-radius: 1.5rem;
   box-shadow: 0.2rem 0.2rem 0.5rem black;
 
-  margin: 1rem 0;
+  margin: 2rem 0;
   padding: 1.5rem;
 }
